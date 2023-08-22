@@ -32,14 +32,16 @@ class ExamController extends Controller
     {
         $request->validate([
             "exam" => "required",
-            "name" => "required",
+            "ex_num" => "required",
             "number" => "required"
         ]);
         $post_data = $request->all();
         unset($post_data['_token']);
         unset($post_data['_method']);
         DB::table("exams")->insert($post_data);
-        return redirect('/exams');
+        $exam = DB::table('exams')->orderBy('id', 'desc')->get();
+        $ex_id = $exam[0]->id;
+        return redirect('/exam?id='.$ex_id);
     }
     public function exams()
     {
@@ -67,13 +69,18 @@ class ExamController extends Controller
             if (!empty($value))
                 $ids[] = $value;
         }
-        $keys = array_rand($ids,$exam->number);
-        $questions = [];
-        foreach ($keys as $key) {
-            $question_id = $ids[$key];
-            $question = DB::table('questions')->select()->where(["id" => $question_id])->get();
-            $questions[] = $question[0];
+        $exams = [];
+        for ($i=0; $i < $exam->ex_num; $i++) { 
+            $keys = array_rand($ids,$exam->number);
+            $questions = [];
+            foreach ($keys as $key) {
+                $question_id = $ids[$key];
+                $question = DB::table('questions')->select()->where(["id" => $question_id])->get();
+                $questions[] = $question[0];
+            }
+            $exams[] = $questions;
         }
-        return view('exam.exam3',['questions' => $questions,"exam_id" => $id]);
+
+        return view('exam',['exams' => $exams,"exam_id" => $id]);
     }
 }

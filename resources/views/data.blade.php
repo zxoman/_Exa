@@ -200,7 +200,7 @@
             @foreach ($questions as $question)
               <tr>
                 <th scope="row">{{$ni}}</th>
-                <td>{{$question->text}}</td>
+                <td><?php echo $question->text; ?></td>
 
                 <td><a href="/edit?id={{$question->id}}"><button class="edit">Edit</button></a><a href="/delete?id={{$question->id}}"><button class="delete">Delete</button></a></td>
               </tr>

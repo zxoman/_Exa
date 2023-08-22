@@ -185,7 +185,7 @@
                 <input type="text" name="number" class="form-control" placeholder="عدد الاسئله">
               </div>
               <div class="col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="اسم الامتحان">
+                <input type="text" name="ex_num" class="form-control" placeholder="عدد الامتحانات">
               </div>
             <input type="hidden" id="exam" name="exam">
             <button type="button" onclick="createEx()" class="btn btn-secondary">create EXAM</button>
@@ -212,7 +212,7 @@
             @foreach ($questions as $question)
             <tr>
               <th scope="row">{{$ni}}</th>
-              <td>{{$question->text}}</td>
+              <td><?php echo $question->text; ?></td>
 
               <td><input type="checkbox" onchange="selectb('in{{$question->id}}')" id="in{{$question->id}}" value="{{$question->id}}"></td>
             </tr>
