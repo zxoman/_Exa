@@ -192,12 +192,6 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Quistion</th>
-              <th scope="col">Awnser</th>
-              <th scope="col">class</th>
-              <th scope="col">1</th>
-              <th scope="col">2</th>
-              <th scope="col">3</th>
-              <th scope="col">4</th>
               <th scope="col">Edit</th>
             </tr>
           </thead>
@@ -207,12 +201,7 @@
               <tr>
                 <th scope="row">{{$ni}}</th>
                 <td>{{$question->text}}</td>
-                <td>{{$question->answer}}</td>
-                <td>{{$question->class}}</td>
-                <td>{{$question->a1}}</td>
-                <td>{{$question->a2}}</td>
-                <td>{{$question->a3}}</td>
-                <td>{{$question->a4}}</td>
+
                 <td><a href="/edit?id={{$question->id}}"><button class="edit">Edit</button></a><a href="/delete?id={{$question->id}}"><button class="delete">Delete</button></a></td>
               </tr>
               <?php $ni++; ?>
