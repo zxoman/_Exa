@@ -45,7 +45,8 @@
     }
 
     .edi {
-      background: green;
+      background: linear-gradient(rgb(0 255 0), rgb(0 255 0)) padding-box, linear-gradient(to bottom right, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b) border-box;
+
     }
 
     .grid-container {
@@ -91,7 +92,7 @@
   <div class="exam">
     <div class="grid-container">
       <div><img class="img" src="./assets/img/almanhalpng.png" /></div>
-      <div>الميسترو   </div>
+      <div> Sir. hamada Eldiasty </div>
       <div id="form">نموزج الامتحان:{{$n}}</div>
       <?php $n++; ?>
 
@@ -116,6 +117,50 @@
             <div>(ج) <?php echo $question->a3; ?></div>
           </div>
           <div class="a">
+            <div>(د) <?php echo $question->a4; ?></div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <?php $i++; ?>
+      @endforeach
+    </div>
+  </div>
+  @endforeach
+  <?php $n=1; ?>
+  @foreach ($exams as $exam)
+  <div class="exam">
+    <div class="grid-container">
+      <div><img class="img" src="./assets/img/almanhalpng.png" /></div>
+      <div> Sir. hamada Eldiasty </div>
+      <div id="form">نموزج الامتحان:{{$n}}</div>
+      <?php $n++; ?>
+
+    </div>
+    <hr />
+    <div id="qu">
+      <?php $i = 1; ?>
+     @foreach ($exam as $question)
+        <?php 
+          $gren = ["","","","",""]; 
+        $gren[$question->answer] = "edi" 
+        ?>
+     <div id="text">
+       <div class="q">
+         <div>({{$i}}) <?php echo $question->text; ?></div>
+        </div>
+        <div class="ans">
+          <div class="a {{$gren[1]}}">
+            <div>(ا) <?php echo $question->a1; ?></div>
+          </div>
+          <div class="a  {{$gren[2]}}">
+            <div>(ب) <?php echo $question->a2; ?></div>
+          </div>
+          <div class="a {{$gren[3]}}">
+            <div>(ج) <?php echo $question->a3; ?></div>
+          </div>
+          <div class="a {{$gren[4]}}">
             <div>(د) <?php echo $question->a4; ?></div>
           </div>
         </div>

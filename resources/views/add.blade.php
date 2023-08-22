@@ -79,17 +79,17 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="/add">
           <i class="bi bi-grid"></i>
-          <span>Add Question
+          <span>اضافه سؤال
           </span>
         </a>
         <a class="nav-link collapsed" href="/create">
           <i class="bi bi-grid"></i>
-          <span>Create Exams
+          <span>انشاء امتحان
           </span>
         </a>
         <a class="nav-link collapsed" href="/">
           <i class="bi bi-grid"></i>
-          <span>Bank Exams
+          <span>بنك الامتحانات 
           </span>
         </a>
       </li>
@@ -220,10 +220,10 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>dashboard</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>Devoco</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      Designed by <a href="https://wa.me/+201019630362">mohamed samir</a>
+      Designed by <a href="https://wa.me/+201019354018">Team X</a>
     </div>
   </footer><!-- End Footer -->
 
